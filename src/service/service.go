@@ -57,7 +57,7 @@ func (svc *service) GetTopTenWords(s string) []Words {
 			return myWords[i].Occurances > myWords[j].Occurances
 		})
 		if len(myWords) >= 10 {
-			myWords = myWords[0:9]
+			myWords = myWords[0:10]
 		}
 	}
 	return myWords
