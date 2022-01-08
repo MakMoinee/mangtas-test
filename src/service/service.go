@@ -56,6 +56,9 @@ func (svc *service) GetTopTenWords(s string) []Words {
 		sort.Slice(myWords, func(i, j int) bool { //sort slice to decending
 			return myWords[i].Occurances > myWords[j].Occurances
 		})
+		if len(myWords) >= 10 {
+			myWords = myWords[0:9]
+		}
 	}
 	return myWords
 }
